@@ -16,12 +16,14 @@ public:
     {
         if(root)
         {
+            
+            traverse(root->left,1);
+            traverse(root->right,0);
             if(left==1 and !root->left and !root->right)
             {
                 sum+=root->val;
             }
-            traverse(root->left,1);
-            traverse(root->right,0);
+            
         }
         return ;
     }
