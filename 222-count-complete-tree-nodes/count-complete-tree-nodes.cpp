@@ -11,17 +11,8 @@
  */
 class Solution {
 public:
-    void traverse(TreeNode* root, vector<int> &cnt)
-    {
-        if(!root)return;
-        traverse(root->left,cnt);
-        traverse(root->right,cnt);
-        cnt.push_back(1);
-    }
-
     int countNodes(TreeNode* root) {
-        vector<int> cnt;
-        traverse(root,cnt);
-        return cnt.size();
+        if(!root)return 0;
+        return 1+countNodes(root->left)+countNodes(root->right);
     }
 };
