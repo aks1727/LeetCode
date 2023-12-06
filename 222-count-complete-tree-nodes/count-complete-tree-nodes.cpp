@@ -15,9 +15,9 @@ public:
     void traverse(TreeNode* root,int & cnt)
     {
         if(!root)return;
-        cnt++;
         traverse(root->left,cnt);
         traverse(root->right,cnt);
+        cnt++;
     }
 
     int countNodes(TreeNode* root) {
