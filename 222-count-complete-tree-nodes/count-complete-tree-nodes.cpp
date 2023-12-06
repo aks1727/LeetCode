@@ -11,18 +11,17 @@
  */
 class Solution {
 public:
-
-    void traverse(TreeNode* root,int & cnt)
+    int cnt=0;
+    void traverse(TreeNode* root)
     {
         if(!root)return;
-        traverse(root->left,cnt);
-        traverse(root->right,cnt);
+        traverse(root->left);
+        traverse(root->right);
         cnt++;
     }
 
     int countNodes(TreeNode* root) {
-        int cnt=0;
-        traverse(root,cnt);
+        traverse(root);
         return cnt;
     }
 };
