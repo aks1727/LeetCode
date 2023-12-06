@@ -15,9 +15,9 @@ public:
     void preorder(TreeNode* root, vector<int> &arr)
     {
         if(!root){arr.push_back(-1);return;}
-        arr.push_back(root->val);
         preorder(root->left,arr);
         preorder(root->right,arr);
+        arr.push_back(root->val);
     }
 
     bool isSameTree(TreeNode* p, TreeNode* q) {
