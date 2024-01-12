@@ -15,6 +15,7 @@ public:
         for(int i = s.size()/2 ; i < s.size();i++)
         {
             if(checkV(s[i]))c1--;
+            if(c1<0)return 0;
         }
         return c1==0;
     }
