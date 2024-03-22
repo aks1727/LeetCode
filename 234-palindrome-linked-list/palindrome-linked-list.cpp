@@ -10,19 +10,19 @@
  */
 class Solution {
 public:
-    bool isPalindrome(ListNode* head) {
-        vector<int> v;
-        while(head)
-        {
-            v.push_back(head->val);
-            head = head->next;
-        }
-        int n = v.size();
-        for(int i = 0 ; i < n/2  ;i++)
-        {
-            if(v[i] != v[n-i-1])return 0;
-        }
-        return 1;
-        
+    ListNode* curr;
+    
+    bool solve(ListNode* head)
+    {
+        if(head==NULL)return 1;
+        bool ans = solve(head->next) && head->val == curr->val;
+        curr = curr->next;
+        return ans;
     }
+    
+    bool isPalindrome(ListNode* head) {
+         curr = head;
+        return solve(head);
+    }
+
 };
