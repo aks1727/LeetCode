@@ -7,7 +7,7 @@ public:
         {
             if(nums[i]*-1 == nums[j])return nums[j];
             else if(nums[i]*-1 >nums[j])i++;
-            else if(nums[i]*-1 < nums[j])j--;
+            else j--;
         }
         return -1;
     }
