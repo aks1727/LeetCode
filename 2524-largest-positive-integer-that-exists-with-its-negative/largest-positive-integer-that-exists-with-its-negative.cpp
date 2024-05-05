@@ -5,8 +5,8 @@ public:
         sort(nums.begin(),nums.end());
         while(i<j)
         {
-            if(nums[i]*-1 == nums[j])return nums[j];
-            else if(nums[i]*-1 >nums[j])i++;
+            if(nums[i]+nums[j] == 0)return nums[j];
+            else if(nums[i]+nums[j] < 0)i++;
             else j--;
         }
         return -1;
