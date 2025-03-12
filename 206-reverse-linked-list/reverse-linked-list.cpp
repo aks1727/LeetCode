@@ -11,18 +11,15 @@
 class Solution {
 public:
 
-    void recur(ListNode* current, ListNode* &previous){
-        if(current==NULL)return;
+    ListNode* recur(ListNode* current, ListNode* previous){
+        if(current==NULL)return previous;
         ListNode* forward = current->next;
         current->next = previous;
-        previous = current;
-        current = forward;
-        recur(current,previous);
+        return recur(forward,current);
     }
 
     ListNode* reverseList(ListNode* head) {
-        ListNode* previous = NULL;
-        recur(head, previous);
-        return previous;
+       
+        return  recur(head, NULL);;
     }
 };
