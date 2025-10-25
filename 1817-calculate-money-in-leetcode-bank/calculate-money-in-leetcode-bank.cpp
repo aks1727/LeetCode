@@ -1,15 +1,16 @@
 class Solution {
 public:
     int totalMoney(int n) {
-        int arr[7];
-        arr[0]=1;
+        int monday=1;
+        int restDay=monday;
         int sum =1;
         for(int i = 1 ; i < n;i++){
             if(i%7==0){
-                arr[i%7] = arr[i%7]+1;
+                monday = monday+1;
+                restDay=monday;
             }
-            else arr[i%7]  = arr[(i%7) -1] +1;
-            sum+=arr[i%7];
+            else restDay = restDay+1;
+            sum+=restDay;
         }
         return sum;
     }
