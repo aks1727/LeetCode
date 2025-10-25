@@ -1,23 +1,15 @@
 class Solution {
 public:
     int totalMoney(int n) {
-        if (n<=7)return n*(n+1)/2;
-        int sum=0;
-        for(int i=1; n>0 ;i++)
-        {
-            int k;
-            if(n>=7){
-                k=7;
-                n-=7;
+        int arr[7];
+        arr[0]=1;
+        int sum =1;
+        for(int i = 1 ; i < n;i++){
+            if(i%7==0){
+                arr[i%7] = arr[i%7]+1;
             }
-            else {
-                k = n;
-                n-=n;
-            }
-            int an = i + k-1;
-            // cout<<k<<" "<<i<< " "<<2*i<<" "<<an<<" ";
-            sum += (k/2.0)*(i + an);
-            // cout<<sum<<endl;
+            else arr[i%7]  = arr[(i%7) -1] +1;
+            sum+=arr[i%7];
         }
         return sum;
     }
